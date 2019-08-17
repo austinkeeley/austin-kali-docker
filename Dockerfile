@@ -63,4 +63,7 @@ RUN echo "alias egrep='egrep --color=auto'" >> ~/.bashrc && \
     echo "alias ls='ls --color=auto'" >> ~/.bashrc && \
     echo "alias vim='nvim'" >> ~/.bashrc
 
+# Make your prompt look awesome
+RUN echo "export PS1=\"[\e[1;31m\u@kali\e[0m \w]# \"" >> ~/.bashrc
+
 CMD "/bin/bash"

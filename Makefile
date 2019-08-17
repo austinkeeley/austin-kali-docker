@@ -2,4 +2,4 @@ build:
 	docker build . --tag "austin-kali"
 
 run:
-	docker run -it austin-kali 
+	docker run -it -v "$(PWD):/root/shared" austin-kali 
