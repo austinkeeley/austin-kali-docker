@@ -49,10 +49,6 @@ RUN apt-get -y install neovim \
                        silversearcher-ag \
                        ssh
 
-# Personal dot files
-RUN mkdir -p ~/.config/nvim
-RUN curl https://raw.githubusercontent.com/austinkeeley/dotfiles/master/init.vim > ~/.config/nvim/init.vim
-
 # X11 GUI applications that you might not need. 
 # Wireshark running on the host can read piped data from tcpdump
 # RUN apt-get -y install wireshark
@@ -64,6 +60,7 @@ RUN echo "alias egrep='egrep --color=auto'" >> ~/.bashrc && \
     echo "alias l='ls -CF'" >> ~/.bashrc && \
     echo "alias la='ls -A'" >> ~/.bashrc && \
     echo "alias ll='ls -alF'" >> ~/.bashrc && \
-    echo "alias ls='ls --color=auto'" >> ~/.bashrc
+    echo "alias ls='ls --color=auto'" >> ~/.bashrc && \
+    echo "alias vim='nvim'" >> ~/.bashrc
 
 CMD "/bin/bash"
